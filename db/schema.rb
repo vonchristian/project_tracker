@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160501090128) do
+ActiveRecord::Schema.define(version: 20160501090129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,15 @@ ActiveRecord::Schema.define(version: 20160501090128) do
     t.datetime "updated_at",          null: false
   end
 
+  create_table "stocks", force: :cascade do |t|
+    t.decimal  "quantity",     precision: 9, scale: 2
+    t.integer  "inventory_id"
+    t.decimal  "unit_price",   precision: 9, scale: 2
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.index ["inventory_id"], name: "index_stocks_on_inventory_id", using: :btree
+  end
+
   create_table "work_details", force: :cascade do |t|
     t.integer  "project_id"
     t.string   "code"
@@ -116,5 +125,6 @@ ActiveRecord::Schema.define(version: 20160501090128) do
   add_foreign_key "additional_quantities", "work_details"
   add_foreign_key "contracts", "contractors"
   add_foreign_key "contracts", "projects"
+  add_foreign_key "stocks", "inventories"
   add_foreign_key "work_details", "projects"
 end
