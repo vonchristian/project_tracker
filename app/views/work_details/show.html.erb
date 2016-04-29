@@ -31,10 +31,33 @@
       <div class="col-md-6">
         <div class="card">
           <div class="header">
-            <h4 class="title"> Settings </h4>
+            <h4 class="title"> Additional Quantities
+              <span class="pull-right"><%=link_to "Add Quantity", new_work_detail_additional_quantity_path(@work_detail), class: "btn btn-warning" %></span>
+            </h4>
             <hr>
           </div>
           <div class="content">
+            <% @work_detail.additional_quantities.each do |additional_quantity| %>
+              <ul class="list-unstyled team-members">
+                <li>
+                  <div class="row">
+                    <div class="col-xs-3">
+                      <p><%=additional_quantity.quantity%> <%=additional_quantity.work_detail.unit %></p>
+                    </div>
+                    <div class="col-xs-6">
+                      <%=additional_quantity.remarks %>
+                      <br />
+                      <span class="text-muted"><small><%=additional_quantity.date.strftime("%B %e, %Y") %></small></span>
+                    </div>
+                    <div class="col-xs-3 text-right">
+                      <%=link_to edit_additional_quantity_path(additional_quantity) do %>
+                        <btn class="btn btn-warning btn-icon"><i class="fa fa-pencil"></i> </span>
+                      <% end %>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            <% end %>
           </div>
         </div>
       </div>

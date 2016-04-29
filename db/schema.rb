@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160501003708) do
+ActiveRecord::Schema.define(version: 20160501090126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,28 @@ ActiveRecord::Schema.define(version: 20160501003708) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["work_detail_id"], name: "index_accomplishments_on_work_detail_id", using: :btree
+  end
+
+  create_table "additional_amounts", force: :cascade do |t|
+    t.decimal  "amount"
+    t.integer  "work_detail_id"
+    t.string   "remarks"
+    t.datetime "date"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["work_detail_id"], name: "index_additional_amounts_on_work_detail_id", using: :btree
+  end
+
+  create_table "additional_quantities", force: :cascade do |t|
+    t.integer  "work_detail_id"
+    t.decimal  "quantity"
+    t.datetime "date"
+    t.string   "remarks"
+    t.decimal  "unit_cost"
+    t.decimal  "total_cost"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["work_detail_id"], name: "index_additional_quantities_on_work_detail_id", using: :btree
   end
 
   create_table "contractors", force: :cascade do |t|
@@ -73,6 +95,8 @@ ActiveRecord::Schema.define(version: 20160501003708) do
   end
 
   add_foreign_key "accomplishments", "work_details"
+  add_foreign_key "additional_amounts", "work_details"
+  add_foreign_key "additional_quantities", "work_details"
   add_foreign_key "contracts", "contractors"
   add_foreign_key "contracts", "projects"
   add_foreign_key "work_details", "projects"

@@ -1,6 +1,7 @@
 class WorkDetail < ApplicationRecord
   belongs_to :project
   has_many :accomplishments
+  has_many :additional_quantities, class_name: "ChangeOrders::AdditionalQuantity"
   validates :code, :description, :quantity, :unit, :unit_cost, presence: true
   validates :unit_cost, :quantity, numericality: true
   validates :code, :description, uniqueness:{scope: :project_id}

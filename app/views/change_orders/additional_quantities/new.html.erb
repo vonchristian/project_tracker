@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="card">
+    <div class="header">
+      <h4 class="title"> Accomplishment Details </h4>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-5">
+          <%=simple_form_for [@work_detail, @additional_quantity], url: :work_detail_additional_quantities do |f| %>
+            <%=f.error_notification %>
+            <%=f.input :quantity %>
+            <%=f.input :date, as: :string, input_html: { class: "datepicker" } %>
+            <%=f.input :remarks, as: :text %>
+            <%=f.input :unit_cost, label: "Cost" %>
+            <%=f.input :total_cost, label: "Total" %>
+            <div class="modal-footer">
+              <%=f.submit "Save Quantity", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-md-5">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
