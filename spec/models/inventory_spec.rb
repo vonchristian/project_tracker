@@ -6,10 +6,7 @@ RSpec.describe Inventory, :type => :model do
   end
   describe "validations" do
     it { is_expected.to validate_presence_of :description }
-    it { is_expected.to validate_presence_of :unit_price }
-    it do
-      is_expected.to validate_numericality_of(:unit_price).is_greater_than(0.1)
-    end
+    it { is_expected.to validate_presence_of :unit }
   end
 
   describe "nested attributes" do

@@ -11,8 +11,10 @@ feature 'Saving an inventory', type: :feature do
     visit inventories_path
     click_link "New Inventory"
     fill_in "Description", with: "DMAXX"
-    fill_in "Unit price", with: 100
-    click_button "Save Equipment"
+    fill_in "Unit", with: 'cubic'
+    fill_in "Quantity", with: 10
+    fill_in "Price", with: 90
+    click_button "Save Inventory"
 
     expect(page).to have_content("saved successfully.")
     expect(page).to have_content("DMAXX")

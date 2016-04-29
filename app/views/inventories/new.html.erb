@@ -9,7 +9,11 @@
           <%=simple_form_for @inventory do |f| %>
             <%=f.error_notification %>
             <%=f.input :description %>
-            <%=f.input :unit_price %>
+            <%=f.input :unit %>
+            <%=f.simple_fields_for :stocks do |ff| %>
+            <%=ff.input :quantity %>
+            <%=ff.input :unit_price, label: "Price" %>
+            <% end %>
             <div class="modal-footer">
               <%=f.submit "Save Inventory", class: "btn btn-primary" %>
             </div>

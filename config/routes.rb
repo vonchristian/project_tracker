@@ -13,5 +13,5 @@ Rails.application.routes.draw do
    get 'dashboards/index', as: 'dashboard'
 
   resources :equipment
-  resources :inventories, only:[:index, :new, :create]
+  resources :inventories, only:[:index, :new, :create, :show]
 end

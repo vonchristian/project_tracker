@@ -4,6 +4,7 @@ class InventoriesController < ApplicationController
   end
   def new
     @inventory = Inventory.new
+    @inventory.stocks.build
   end
 
   def create
@@ -34,6 +35,6 @@ class InventoriesController < ApplicationController
 
   private
   def inventory_params
-    params.require(:inventory).permit(:description, :unit_price)
+    params.require(:inventory).permit(:description, :unit, stocks_attributes: [:quantity, :unit_price])
   end
 end

@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 20160501090129) do
 
   create_table "inventories", force: :cascade do |t|
     t.string   "description"
-    t.string   "unit_price"
+    t.string   "unit"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
