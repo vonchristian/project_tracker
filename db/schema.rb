@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20160501090127) do
     t.string   "plate_number"
     t.string   "make_and_model"
     t.decimal  "acquisition_cost"
+    t.datetime "acquisition_date"
     t.integer  "status"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false

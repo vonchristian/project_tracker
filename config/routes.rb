@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   resources :contractors, except:[:destroy]
    get 'dashboards/index', as: 'dashboard'
+
+  resources :equipment
 end
