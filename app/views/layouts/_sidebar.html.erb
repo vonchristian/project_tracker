@@ -1,0 +1,110 @@
+<div class="sidebar" data-background-color="white" data-active-color="warning">
+
+ <!--
+ Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+ Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+-->
+
+   <div class="sidebar-wrapper">
+         <div class="logo">
+             <a href="http://www.creative-tim.com" class="simple-text">
+                 BPLS - Tinoc
+             </a>
+         </div>
+
+         <ul class="nav">
+            <li class="<%="active" if current_page? dashboard_path %>">
+                 <a href="/dashboards/index">
+                     <i class="fa fa-dashboard"></i>
+                     <p>Dashboard</p>
+                 </a>
+             </li>
+             <li class="<%#="active" if current_page? taxpayers_path %>">
+                 <a href="/taxpayers">
+                     <i class="fa fa-user"></i>
+                     <p>Taxpayers</p>
+                 </a>
+             </li>
+              <li class="<%#="active" if current_page? businesses_path %>">
+                 <a href="/businesses">
+                     <i class="fa fa-building"></i>
+                     <p>Businesses</p>
+                 </a>
+             </li>
+             <li class="<%#="active" if current_page? entries_path %>">
+                <a href="/entries">
+                    <i class="fa fa-money"></i>
+                    <p>Payments</p>
+                </a>
+            </li>
+
+
+             <li>
+                 <a href="/classifications">
+                     <i class="fa fa-server"></i>
+                     <p>Industries</p>
+                 </a>
+             </li>
+             <li class="<%#="active" if current_page? settings_path %>">
+                 <a href="/settings/index">
+                     <i class="fa fa-cog"></i>
+                     <p>Settings</p>
+                 </a>
+             </li>
+             <li class="<%#="active" if current_page? reports_path %>">
+                 <a href="/reports">
+                     <i class="fa fa-file-text"></i>
+                     <p>Reports</p>
+                 </a>
+             </li>
+             <li>
+                 <a href="notifications.html">
+                     <i class="ti-bell"></i>
+                     <p>Notifications</p>
+                 </a>
+             </li>
+         </ul>
+   </div>
+ </div>
+
+ <div class="main-panel">
+     <nav class="navbar navbar-default">
+         <div class="container-fluid">
+             <div class="navbar-header">
+                 <button type="button" class="navbar-toggle">
+                     <span class="sr-only">Toggle navigation</span>
+                     <span class="icon-bar bar1"></span>
+                     <span class="icon-bar bar2"></span>
+                     <span class="icon-bar bar3"></span>
+                 </button>
+                 <a class="navbar-brand" href="#">
+                   <%#="Dashboard" if current_page?(dashboard_path) %>
+                   <%#="Taxpayers" if current_page?(taxpayers_path) %>
+                   <%#="Businesses" if current_page?(businesses_path) %>
+                   <%#="Settings" if current_page?(settings_path) %>
+                   <%#="Reports" if current_page?(reports_path) %>
+                   <%#="Payments" if current_page?(entries_path) %>
+                 </a>
+             </div>
+             <div class="collapse navbar-collapse">
+                 <ul class="nav navbar-nav navbar-right">
+                     <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                 <i class="fa fa-user"></i>
+
+               <p><%#=current_user.email %></p>
+               <b class="caret"></b>
+                           </a>
+                           <ul class="dropdown-menu">
+                             <li><a href="#">Notification 1</a></li>
+                             <li><a href="#">Notification 2</a></li>
+                             <li><a href="#">Notification 3</a></li>
+                             <li><a href="#">Notification 4</a></li>
+                            <li><%#=link_to "Sign out", destroy_user_session_path %></li>
+                           </ul>
+                     </li>
+                 </ul>
+
+             </div>
+         </div>
+     </nav>
