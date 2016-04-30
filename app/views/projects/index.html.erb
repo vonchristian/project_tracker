@@ -1,1 +1,44 @@
-<%=link_to "New Project", new_project_path %>
+
+<div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">List of Projects
+                                  <span class="pull-right"><%=link_to "New Project", new_project_path, class: "btn btn-primary" %>
+</span>                                </h4>
+                                <p class="category"></p>
+                            </div>
+                            <div class="content table-responsive table-full-width">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Contract Amount</th>
+                                        <th>Implementing Office</th>
+
+                                    </thead>
+                                    <tbody>
+                                    <% @projects.each do |project| %>
+                                        <tr>
+                                            <td><%=project.number %></td>
+                                            <td class="text-uppercase"><%=link_to project.name, project %></td>
+                                            <td><%=project.contract_amount%></td>
+                                            <td><%=project.implementing_office %></td>
+
+                                        </tr>
+
+                                        </tr>
+                                        <% end %>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+    </div>

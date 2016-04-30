@@ -1,1 +1,44 @@
-<%=@project.name %>
+<div class="col-lg-8 col-md-5">
+  <div class="card">
+    <div class="header">
+      <h4 class="title"><%=@project.name %></h4>
+    </div>
+    <div class="content">
+      <div class="text-center">
+        <div class="row">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-8">
+            <%=link_to "Update", edit_project_path(@project), class: "btn btn-primary btn-block" %>
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <div class="card">
+    <div class="header">
+      <h4 class="title">Work Details
+        <span class="pull-right"><%=link_to "New Work Detail", new_project_work_detail_path(@project), class: "btn btn-primary" %></span>
+      </h4>
+      <hr>
+    </div>
+    <div class="content">
+      <%@project.work_details.each do |work_detail| %>
+        <div class="row">
+          <div class="col-xs-6">
+            <p><%=link_to work_detail.description, work_detail %></p>
+          </div>
+          <div class="col-xs-3">
+            <p class="pull-right"><%=work_detail.unit_and_quantity %></p>
+          </div>
+        </div>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+</div>

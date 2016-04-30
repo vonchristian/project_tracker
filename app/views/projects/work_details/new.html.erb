@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="card">
+    <div class="header">
+      <h4 class="title"> Work Details </h4>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-5">
+          <%=simple_form_for [@project, @work_detail], url: :project_work_details do |f| %>
+            <%=f.error_notification %>
+            <%=f.input :code %>
+            <%=f.input :description %>
+            <%=f.input :unit %>
+            <%=f.input :unit_cost, label: "Cost" %>
+            <%=f.input :quantity %>
+            <div class="modal-footer">
+              <%=f.submit "Save Work Detail", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

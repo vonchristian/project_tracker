@@ -1,8 +1,19 @@
-<%=simple_form_for @project do |f| %>
-  <%=f.error_notification %>
-  <%=f.input :name %>
-  <%=f.input :number %>
-  <%=f.input :implementing_office %>
-  <%=f.input :contract_amount %>
-  <%=f.submit "Save Project" %>
-<% end %>
+<div class="container">
+  <div class="card">
+    <div class="header">
+      <h4 class="title"> Project Details </h4>
+    </div>
+    <div class="content">
+      <%=simple_form_for @project do |f| %>
+        <%=f.error_notification %>
+        <%=f.input :name %>
+        <%=f.input :number %>
+        <%=f.input :implementing_office %>
+        <%=f.input :contract_amount %>
+        <div class="modal-footer">
+          <%=f.submit "Save Project" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
