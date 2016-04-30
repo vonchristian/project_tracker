@@ -22,7 +22,7 @@
                                         <tr>
                                             <td><%=project.number %></td>
                                             <td class="text-uppercase"><%=link_to project.name, project %></td>
-                                            <td><%=project.contract_amount%></td>
+                                            <td><span class="pull-right"><%=number_to_currency project.contract_amount%></span></td>
                                             <td><%=project.implementing_office %></td>
 
                                         </tr>

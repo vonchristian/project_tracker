@@ -4,16 +4,22 @@
       <h4 class="title"> Project Details </h4>
     </div>
     <div class="content">
-      <%=simple_form_for @project do |f| %>
-        <%=f.error_notification %>
-        <%=f.input :name %>
-        <%=f.input :number %>
-        <%=f.input :implementing_office %>
-        <%=f.input :contract_amount %>
-        <div class="modal-footer">
-          <%=f.submit "Save Project" %>
+      <div class="row">
+        <div class="col-md-5">
+          <%=simple_form_for @project do |f| %>
+            <%=f.error_notification %>
+            <%=f.input :name, as: :text %>
+            <%=f.input :number %>
+            <%=f.input :implementing_office %>
+            <%=f.input :contract_amount %>
+            <div class="modal-footer">
+              <%=f.submit "Save Project", class: "btn btn-primary" %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+        <div class="col-md-5">
+        </div>
+      </div>
     </div>
   </div>
 </div>
