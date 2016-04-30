@@ -1,26 +1,33 @@
 <div class="col-md-4">
   <div class="card">
-    <div class="header">
-      <h4 class="title"> Contractors
-        <span class="pull-right"><%=link_to "New Contractor", new_contractor_path, class: "btn btn-primary" %></span>
-      </h4>
-      <hr>
-    </div>
-    <div class="content">
-      <% @contractors.each do |contractor| %>
-        <div class="row">
-          <div class="col-md-5">
-            <p><%=link_to contractor.full_name, contractor %></p>
-          </div>
-          <div class="col-md-3">
-            <p><%=contractor.projects.count %></p>
-          </div>
-          <div class="col-md-4">
-            <btn class="btn btn-sm btn-success btn-icon"><i class="fa fa-envelope"></i></btn>
-          </div>
-        </div>
-        <hr>
-      <% end %>
+      <div class="header">
+          <h4 class="title">Contractors
+            <span class="pull-right"> <%=link_to "New Contractor", new_contractor_path, class: "btn btn-primary" %></span>
+          </h4>
+          <hr>
+      </div>
+      <div class="content">
+        <% @contractors.each do |contractor| %>
+          <ul class="list-unstyled team-members">
+            <li>
+              <div class="row">
+                <div class="col-xs-3">
+                  <div class="avatar">
+                    <%=link_to(image_tag(contractor.photo.url(:small), class: "img-circle img-no-padding img-responsive"), contractor) %>
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <%=link_to contractor.full_name, contractor %>
+                  <br />
+                  <span class="text-muted"><small><%=contractor.company %></small></span>
+                </div>
+                <div class="col-xs-3 text-right">
+                  <btn class="btn btn-success btn-icon"><i class="fa fa-pencil"></i> </span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>

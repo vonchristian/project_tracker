@@ -8,8 +8,12 @@
         <div class="col-md-6">
         </div>
         <div class="col-md-5">
-          <%=simple_form_for @contractor do |f| %>
+          <%=simple_form_for @contractor, html: {multipart: true } do |f| %>
             <%=f.error_notification %>
+            <center>
+              <%= image_tag @contractor.photo.url(:thumb), class: "img-circle" %>
+              <%= f.input :photo, as: :file %>
+            </center>
             <div class="row">
               <div class="col-md-6">
                 <%=f.input :first_name %>

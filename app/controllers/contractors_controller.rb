@@ -36,6 +36,6 @@ class ContractorsController < ApplicationController
   private
 
   def contractor_params
-    params.require(:contractor).permit(:first_name, :last_name, :company, :position)
+    params.require(:contractor).permit(:photo, :first_name, :last_name, :company, :position)
   end
 end

@@ -1,32 +1,49 @@
 <div class="row">
   <div class="col-lg-4 col-md-5">
-      <div class="card card-user">
-          <div class="image">
-              <%= image_tag "hero.jpg", class: "img-square center-block", alt: "taxpayer profile picture" %>
-          </div>
-          <div class="content">
-              <div class="author">
-                <%#= image_tag @taxpayer.photo.url(:thumb), class: "avatar border-white", alt: "taxpayer profile picture" %>
-                <h4 class="title"><%=@contractor.full_name %><br />
-                   <a href="#"><small>@chetfaker</small></a>
-                </h4>
-              </div>
-              <p class="description text-center">
-                  "I like the way you work it <br>
-                  No diggity <br>
-                  I wanna bag it up"
-              </p>
-          </div>
-          <hr>
-          <br>
-          <div class="text-center">
-              <div class="row">
-
-                  <div class="col-md-12">
-                      <center>  <%=link_to "Update Contractor", edit_contractor_path(@contractor), class: "btn btn-primary" %></center>
-                  </div>
-
-              </div>
-<br>
-          </div>
+    <div class="card card-user">
+      <div class="image">
+          <%= image_tag "hero.jpg", class: "img-square center-block", alt: "taxpayer profile picture" %>
       </div>
+      <div class="content">
+        <div class="author">
+          <%= image_tag @contractor.photo.url(:thumb), class: "avatar border-white", alt: "taxpayer profile picture" %>
+          <h4 class="title"><%=@contractor.full_name %><br />
+             <a href="#"><small><%=@contractor.company %></small></a>
+          </h4>
+        </div>
+        <p class="description text-center">
+            "I like the way you work it <br>
+            No diggity <br>
+            I wanna bag it up"
+        </p>
+      </div>
+      <hr>
+      <br>
+      <div class="text-center">
+        <div class="row">
+          <div class="col-md-12">
+            <center>  <%=link_to "Update Contractor", edit_contractor_path(@contractor), class: "btn btn-primary" %></center>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="header">
+        <h4 class="title">Notifications </h4>
+        <hr>
+      </div>
+      <div class="content">
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+  <div class="card">
+    <div class="header">
+      <h4 class="title"> Projects </h4>
+    </div>
+    <div class="content">
+    </div>
+  </div>
+</div>
+</div>
