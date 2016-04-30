@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="card">
+    <div class="header">
+      <h4 class="title"> Contractor Details </h4>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-5">
+          <%=simple_form_for @contractor do |f| %>
+            <%=f.error_notification %>
+            <div class="row">
+              <div class="col-md-6">
+                <%=f.input :first_name %>
+              </div>
+              <div class="col-md-6">
+                <%=f.input :last_name %>
+              </div>
+            </div>
+            <%=f.input :company %>
+            <%=f.input :position %>
+            <div class="modal-footer">
+              <%=f.submit "Save Contractor", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

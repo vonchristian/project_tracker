@@ -12,6 +12,11 @@ RSpec.describe Contractor, :type => :model do
     it { is_expected.to validate_presence_of :position }
   end
 
+  describe "photo_attachment" do
+  it { is_expected.to have_attached_file(:photo) }
+  it { is_expected.to validate_attachment_content_type(:photo).allowing('image/png', 'image/gif').rejecting('text/plain', 'text/xml') }
+end
+
   it ".full_name" do
     contractor = build(:contractor, first_name: "Von Christian", last_name: "Halip")
 
