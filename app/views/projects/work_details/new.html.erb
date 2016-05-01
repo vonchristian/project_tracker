@@ -13,8 +13,9 @@
             <%=f.input :code %>
             <%=f.input :description %>
             <%=f.input :unit %>
-            <%=f.input :unit_cost, label: "Cost" %>
-            <%=f.input :quantity %>
+            <%=f.input :quantity,input_html:{id: "quantity", oninput: "calculate()"} %>
+            <%=f.input :unit_cost,label: "Cost", input_html:{id: "unit_cost", oninput: "calculate()"}  %>
+            <%=f.input :budget, label: "Total", readonly: true ,  input_html:{id: "budget"} %>
             <div class="modal-footer">
               <%=f.submit "Save Work Detail", class: "btn btn-primary" %>
             </div>

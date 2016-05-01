@@ -12,9 +12,10 @@ feature 'Creating a Work Detail', type: :feature do
     click_link "New Work Detail"
     fill_in "Code", with: "213"
     fill_in "Description", with: "Safety Program"
+    fill_in "Unit", with: "cu.m."
     fill_in "Quantity", with: 50
-     fill_in "Cost", with: 100_000
-     fill_in "Unit", with: "cu.m."
+    fill_in "Cost", with: 1000
+    fill_in "Total", with: 50_000
     click_button "Save Work Detail"
 
 

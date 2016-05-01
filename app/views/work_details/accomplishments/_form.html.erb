@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card">
+    <div class="header">
+      <h4 class="title"> Accomplishment Details </h4>
+    </div>
+    <div class="content">
+      <div class="row">
+        <div class="col-md-5">
+          <%=simple_form_for [@work_detail, @accomplishment] do |f| %>
+            <%=f.error_notification %>
+            <%=f.input :quantity %>
+            <%=f.input :date, as: :string, input_html: { class: "datepicker" } %>
+            <%=f.input :remarks, as: :text %>
+            <div class="modal-footer">
+              <%=f.submit "Save Accomplishment", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-md-5">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

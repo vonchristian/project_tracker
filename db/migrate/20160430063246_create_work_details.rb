@@ -6,8 +6,9 @@ class CreateWorkDetails < ActiveRecord::Migration[5.0]
       t.string :description
       t.decimal :quantity
       t.string :unit
-      t.string :unit_cost
+      t.decimal :unit_cost
       t.integer :status
+      t.decimal :budget
 
       t.timestamps
     end

@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :work_detail do
     project nil
-    code "MyString"
-    description "MyString"
-    quantity "9.99"
+    code "001212"
+    description "Satety Program"
+    quantity 100
     unit "MyString"
-    unit_cost "MyString"
+    unit_cost 100
     status 1
   end
 end

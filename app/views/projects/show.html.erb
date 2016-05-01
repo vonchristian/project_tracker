@@ -1,4 +1,4 @@
-<div class="col-lg-8 col-md-5">
+<div class="col-lg-6 col-md-6">
   <div class="card">
     <div class="header">
       <h4 class="title"><%=@project.name %></h4>
@@ -18,8 +18,16 @@
     </div>
   </div>
 </div>
-
 <div class="col-md-4">
+  <div class="card">
+    <div class="header">
+      <h4 class="title">Contractors</h4>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-8">
   <div class="card">
     <div class="header">
       <h4 class="title">Work Details
@@ -28,16 +36,30 @@
       <hr>
     </div>
     <div class="content">
+      <ul class="list-unstyled team-members">
       <%@project.work_details.each do |work_detail| %>
+      <li>
         <div class="row">
-          <div class="col-xs-6">
+          <div class="col-xs-5">
             <p><%=link_to work_detail.description, work_detail %></p>
           </div>
-          <div class="col-xs-3">
-            <p class="pull-right"><%=work_detail.unit_and_quantity %></p>
+          <div class="col-xs-2">
+            <%=work_detail.unit_and_quantity %>
+            <br />
+            <span class="text-muted"><small>updated last <%=Time.zone.now.strftime("%B %e, %Y")%></small></span>
           </div>
+          <div class="col-xs-2">
+            <%="#{work_detail.accomplished_quantity} #{work_detail.unit}" %>
+            <br />
+            <span class="text-muted"><small>updated last <%=Time.zone.now.strftime("%B %e, %Y")%></small></span>
+          </div>
+          <div class="col-xs-2">
+            <%=link_to new_work_detail_accomplishment_path(work_detail) do %>
+              <btn class="btn btn-info btn-icon"><i class="fa fa-pencil"></i></span>
+            <% end %>
+              </div>
         </div>
-        <hr>
+      </li>
       <% end %>
     </div>
   </div>

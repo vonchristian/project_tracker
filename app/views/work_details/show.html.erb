@@ -1,12 +1,19 @@
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-8">
     <div class="card">
       <div class="header">
         <h4 class="title">Info</h4>
         <hr>
       </div>
       <div class="content">
-        <%=@work_detail.description %>
+        <div class="row">
+          <div class="col-md-6">
+            <p> <%=@work_detail.description %></p>
+          </div>
+          <div class="col-md-6">
+            <p><%=@work_detail.project_name %></p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -17,6 +24,7 @@
             <hr>
           </div>
           <div class="content">
+            <h4 class="title"> <%=number_to_currency @work_detail.budget %> </h4>
           </div>
         </div>
       </div>
@@ -35,8 +43,33 @@
   <div class="col-md-4">
     <div class="card">
       <div class="header">
-        <h4 class="title"> Accomplishments </h4>
+        <h4 class="title"> Accomplishments
+          <span class="pull-right"><%=link_to "Add Accomplishment", new_work_detail_accomplishment_path(@work_detail), class: "btn btn-primary" %></span>
+        </h4>
         <hr>
+      </div>
+      <div class="content">
+        <% @work_detail.accomplishments.each do |accomplishment| %>
+          <ul class="list-unstyled team-members">
+            <li>
+              <div class="row">
+                <div class="col-xs-3">
+                  <p><%=accomplishment.quantity%> <%=accomplishment.work_detail_unit %></p>
+                </div>
+                <div class="col-xs-6">
+                  <%=accomplishment.remarks %>
+                  <br />
+                  <span class="text-muted"><small><%=accomplishment.date.strftime("%B %e, %Y") %></small></span>
+                </div>
+                <div class="col-xs-3 text-right">
+                  <%=link_to edit_accomplishment_path(accomplishment) do %>
+                    <btn class="btn btn-warning btn-icon"><i class="fa fa-pencil"></i> </span>
+                  <% end %>
+                </div>
+              </div>
+            </li>
+          </ul>
+        <% end %>
       </div>
     </div>
   </div>

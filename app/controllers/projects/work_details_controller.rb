@@ -16,6 +16,6 @@ class Projects::WorkDetailsController < ApplicationController
 
   private
   def work_detail_params
-    params.require(:work_detail).permit(:code, :description, :unit, :unit_cost, :quantity)
+    params.require(:work_detail).permit(:code, :description, :unit, :unit_cost, :quantity, :budget )
   end
-end  
+end
