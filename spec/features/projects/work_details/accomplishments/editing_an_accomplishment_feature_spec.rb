@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 feature 'Work Detail Accomplishment Management', type: :feature do
-  #  before (:each) do
-  #    user = FactoryGirl.create(:user)
-  #    login_as(user, :scope => :user)
-  #  end
+   before (:each) do
+     user = FactoryGirl.create(:user)
+     login_as(user, :scope => :user)
+   end
   given!(:work_detail) { create(:work_detail) }
   given!(:accomplishment) {create(:accomplishment, work_detail: work_detail)}
 

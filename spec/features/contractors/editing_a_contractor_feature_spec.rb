@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 feature 'Contractor management', type: :feature do
-  #  before (:each) do
-  #    user = FactoryGirl.create(:user)
-  #    login_as(user, :scope => :user)
-  #  end
+   before (:each) do
+     user = FactoryGirl.create(:user)
+     login_as(user, :scope => :user)
+   end 
   given! (:contractor) {create(:contractor)}
   scenario 'with valid information' do
     visit contractor_path(contractor)

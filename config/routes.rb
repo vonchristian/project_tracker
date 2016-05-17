@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :projects, except:[:destroy] do
     resources :work_details, only: [:new, :create], module: :projects
   end

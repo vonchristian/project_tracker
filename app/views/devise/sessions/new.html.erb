@@ -1,0 +1,36 @@
+
+<div class="container">
+<br>
+<br>
+<div class="col-md-4 col-md-offset-4">
+
+<div class="panel panel-default">
+<div class="panel-body">
+
+<h4><center class="text-muted">Sign in to your Account.</center></h4>
+<br>
+<br>
+<%= simple_form_for(resource, as: resource_name, :url => session_path(resource_name),
+       wrapper_mappings: {boolean: :vertical_boolean }) do |f| %>
+
+ <%=image_tag("default.png", height: 100, width: 100, class: 'img-circle img-responsive center-block') %>
+<br>
+ <%= f.input :email, placeholder: "Email", input_html:{class: "form-control input-lg"}, label: false %>
+
+
+
+    <%= f.input :password, placeholder: "Password",  input_html:{class: "form-control input-lg"}, label: false %>
+
+
+
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    <hr>
+    <%= f.submit "Sign in", class: "btn btn-success btn-block btn-lg btn-flat" %>
+<% end %>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>

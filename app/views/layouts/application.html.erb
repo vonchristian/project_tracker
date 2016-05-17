@@ -23,9 +23,9 @@
   </head>
    <body>
    <div class="wrapper">
-      <%# if user_signed_in? %>
+      <% if user_signed_in? %>
   <%=render 'layouts/sidebar' %>
-      <%# end %>
+      <% end %>
           <%=render 'layouts/flash' %>
           <div class="content">
             <div class="container-fluid">
