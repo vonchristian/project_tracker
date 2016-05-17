@@ -31,6 +31,14 @@ RSpec.describe WorkDetail, :type => :model do
     expect(work_detail.unit_and_quantity).to eql "100.0 cubic meter"
   end
 
+  it ".remaining_quantity" do
+    work_detail = create(:work_detail, quantity: 100 )
+    accomplishment = create(:accomplishment, quantity: 10, work_detail: work_detail)
+    accomplishment = create(:accomplishment, quantity: 10, work_detail: work_detail)
+
+    expect(work_detail.remaining_quantity).to eql(80)
+  end
+
   it ".accomplished_quantity" do
     work_detail = create(:work_detail, quantity: 100 )
     accomplishment = create(:accomplishment, quantity: 9, work_detail: work_detail)

@@ -15,4 +15,7 @@ class WorkDetail < ApplicationRecord
   def accomplished_quantity
     accomplishments.total
   end
+  def remaining_quantity
+    quantity - accomplished_quantity
+  end
 end

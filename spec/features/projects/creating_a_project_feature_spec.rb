@@ -12,7 +12,7 @@ feature 'Creating a project', type: :feature do
     fill_in "Name", with: "Road Widening"
     fill_in "Number", with: "0023GH"
     fill_in "Implementing office", with: "DPWH"
-     fill_in "Contract amount", with: 100_000
+    fill_in "Contract amount", with: 100_000
     click_button "Save Project"
 
 
