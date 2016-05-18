@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :work_detail do
+  factory :work_detail, class: "Monitoring::WorkDetail" do
     project nil
     code "001212"
     description "Satety Program"

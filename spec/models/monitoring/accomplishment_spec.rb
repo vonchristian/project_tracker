@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Accomplishment, :type => :model do
+RSpec.describe Monitoring::Accomplishment, :type => :model do
   describe "associations" do
     it { is_expected.to belong_to :work_detail }
   end
