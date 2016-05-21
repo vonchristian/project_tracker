@@ -8,7 +8,7 @@
         <div class="col-md-6">
         </div>
         <div class="col-md-5">
-          <%=simple_form_for [@project, @work_detail], url: :project_work_details do |f| %>
+          <%=simple_form_for [@project, @work_detail], url: :monitoring_project_work_details do |f| %>
             <%=f.error_notification %>
             <%=f.input :code %>
             <%=f.input :description %>

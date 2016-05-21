@@ -10,9 +10,7 @@ feature 'Work Detail Accomplishment Management', type: :feature do
 
   scenario 'then i can update an accomplishment with valid information' do
     visit work_detail_path(work_detail)
-    within("#edit_accomplishment") do
-      click_link "Edit"
-    end
+  find(".new_project").find(".fa-plus").click
     fill_in "Quantity", with: 1
     fill_in "Date", with: "2016/05/01"
     fill_in "Remarks", with: "Delivered Sand"

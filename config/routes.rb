@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :new, :create]
   namespace :monitoring do
     resources :projects, except:[:destroy] do
-      resources :work_details, only: [:new, :create], module: :projects
+      resources :work_details, only: [:new, :create, :show], module: :projects
     end
-    resources :work_details, only:[:show] do
+    resources :work_details, only:[:edit, :update] do
       resources :accomplishments, only:[:new, :create], module: :work_details
       resources :additional_quantities, only:[:new, :create], module: :change_orders
     end

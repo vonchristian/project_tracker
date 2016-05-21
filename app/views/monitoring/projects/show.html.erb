@@ -9,7 +9,7 @@
           <div class="col-md-2">
           </div>
           <div class="col-md-8">
-            <%=link_to "Update", edit_project_path(@project), class: "btn btn-primary btn-block" %>
+            <%=link_to "Update", edit_monitoring_project_path(@project), class: "btn btn-primary btn-block" %>
           </div>
           <div class="col-md-2">
           </div>
@@ -31,7 +31,7 @@
   <div class="card">
     <div class="header">
       <h4 class="title">Work Details
-        <span class="pull-right"><%=link_to "New Work Detail", new_project_work_detail_path(@project), class: "btn btn-primary" %></span>
+        <span class="pull-right"><%=link_to "New Work Detail", new_monitoring_project_work_detail_path(@project), class: "btn btn-primary" %></span>
       </h4>
       <hr>
     </div>
@@ -41,7 +41,7 @@
       <li>
         <div class="row">
           <div class="col-xs-5">
-            <p><%=link_to work_detail.description, work_detail %></p>
+            <p><%=link_to work_detail.description, monitoring_project_work_detail_path(work_detail) %></p>
           </div>
           <div class="col-xs-2">
             <%=work_detail.unit_and_quantity %>
@@ -54,7 +54,7 @@
             <span class="text-muted"><small>updated last <%=Time.zone.now.strftime("%B %e, %Y")%></small></span>
           </div>
           <div class="col-xs-2">
-            <%=link_to new_work_detail_accomplishment_path(work_detail) do %>
+            <%=link_to new_monitoring_work_detail_accomplishment_path(work_detail) do %>
               <btn class="btn btn-info btn-icon"><i class="fa fa-pencil"></i></span>
             <% end %>
               </div>

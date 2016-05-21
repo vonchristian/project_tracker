@@ -8,7 +8,7 @@ feature 'Creating a Work Detail', type: :feature do
   given!(:project) { create(:project) }
 
   scenario 'then i can save a work detail with valid information' do
-    visit project_path(project)
+    visit monitoring_project_path(project)
     click_link "New Work Detail"
     fill_in "Code", with: "213"
     fill_in "Description", with: "Safety Program"
